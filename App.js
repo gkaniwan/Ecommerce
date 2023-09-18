@@ -1,17 +1,16 @@
 import { StyleSheet, View } from 'react-native';
-import  Header  from './src/components/Header';
-import Categories from './src/components/Categories';
 import Search from './src/components/Search';
-// import Home from './src/screens/Home';
+import Home from './src/screens/Home';
+import Products from './src/screens/Products';
+
 
 
 export default function App() {
   return (
       <View >
-      {/* <Home/> */}
+        {/* <Home/> */}
         {/* <Search/> */}
-        <Header />
-        <Categories/>
+        <Products category="smartphones"/>
       </View>
   );
 }
