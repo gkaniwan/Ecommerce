@@ -1,13 +1,18 @@
-import { StyleSheet, Text, View, Image, Pressable } from 'react-native'
+import { StyleSheet, Text, View, Image, Pressable, useWindowDimensions } from 'react-native'
 import React from 'react'
 import { colors } from '../theme/colors'
 import { products } from '../data/products'
 
 export default function ProductItem({ item }) {
+
+    const {height, width} = useWindowDimensions();
+
+    console.log(height, width);
+
   return (
     <View style={styles.container}>
         <Pressable style={styles.button} onPress={() => console.log("PRESIONADO")}> 
-                <Text style={styles.text}>{ item.title}</Text>
+                <Text style={ width < 450 ? styles.textMin : styles.text}>{ item.title}</Text>
                 <Text style={styles.text}>{ item.price}</Text>
             <Image resizeMode='cover' style={styles.image} source={{uri: item.images[0]}} />
         </Pressable>
@@ -30,6 +35,11 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         marginLeft: 20,
 
+    },
+    textMin:{
+        fontSize:15,
+        fontWeight: "light",
+        marginLeft: 20,
     },
     image:{
         height: 50,
