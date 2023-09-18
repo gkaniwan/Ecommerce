@@ -1,5 +1,5 @@
 import { useFonts } from 'expo-font';
-import { StyleSheet, View } from 'react-native';
+import { SafeAreaView, StyleSheet, View } from 'react-native';
 import Search from './src/components/Search';
 import Home from './src/screens/Home';
 import ItemDetail from './src/screens/ItemDetail';
@@ -19,12 +19,12 @@ export default function App() {
   }
 
   return (
-      <View >
+      <SafeAreaView>
         {/* <Home/> */}
         {/* <Search/> */}
         {/* <Products category="smartphones"/> */}
         <ItemDetail />
-      </View>
+      </SafeAreaView>
   );
 }
 

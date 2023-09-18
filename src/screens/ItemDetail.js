@@ -21,7 +21,7 @@ const ItemDetail = () => {
       </View>
       <Button title="Agregar" onPress={() => console.log("Presionado")}/>
       <View style={styles.containerImage}>
-        <AntDesign name="star" size={21} color="gold" />
+        <AntDesign name="star" size={24} color="black" />
         <Text style={styles.rating}>Rating: {initialProd.rating}</Text>
       </View>
     </View>
