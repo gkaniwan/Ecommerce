@@ -1,10 +1,7 @@
 import { useFonts } from 'expo-font';
-import { SafeAreaView, StyleSheet, View } from 'react-native';
-import Search from './src/components/Search';
-import Home from './src/screens/Home';
-import ItemDetail from './src/screens/ItemDetail';
-import Products from './src/screens/Products'; 
-
+import { StyleSheet } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import RootNavegation from './src/navegation/RootNavegation';
 
 
 export default function App() {
@@ -19,12 +16,9 @@ export default function App() {
   }
 
   return (
-      <SafeAreaView>
-        {/* <Home/> */}
-        {/* <Search/> */}
-        {/* <Products category="smartphones"/> */}
-        <ItemDetail />
-      </SafeAreaView>
+    <NavigationContainer>
+      <RootNavegation/>
+    </NavigationContainer>
   );
 }
 

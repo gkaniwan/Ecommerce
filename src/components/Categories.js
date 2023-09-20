@@ -4,13 +4,13 @@ import { categorias } from '../data/categorias'
 import CategoryItem from './CategoryItem'
 import { colors } from '../theme/colors'
 
-const Categories = () => {
+const Categories = ({navigation}) => {
   return (
     <View style = {styles.container}>
       <FlatList 
         data={categorias}
         keyExtractor={(key) => key }
-        renderItem={({item}) => <CategoryItem item={item}/>}
+        renderItem={({item}) => <CategoryItem navigation={navigation} item={item}/>}
       />
     </View>
   )

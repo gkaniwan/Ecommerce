@@ -1,9 +1,10 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, Pressable } from 'react-native'
 import { colors } from '../theme/colors';
 
-const Header = ({title = "Bienvenido"}) => {
+const Header = ({title}) => {
   return (
     <View style={styles.container}>
+      
       <Text style={styles.title}>{title}</Text>
     </View>
   )

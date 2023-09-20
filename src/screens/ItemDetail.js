@@ -1,10 +1,11 @@
 import { StyleSheet, Text, View, Image, Button } from 'react-native'
 import Header from '../components/Header';
 import { products } from '../data/products'
-import { AntDesign } from '@expo/vector-icons';
+// import { AntDesign } from '@expo/vector-icons';
 
-const ItemDetail = () => {
+const ItemDetail = (item) => {
 
+  console.log(item);
   const initialProd = products[0];
 
 
@@ -21,7 +22,7 @@ const ItemDetail = () => {
       </View>
       <Button title="Agregar" onPress={() => console.log("Presionado")}/>
       <View style={styles.containerImage}>
-        <AntDesign name="star" size={24} color="black" />
+        {/* <AntDesign name="star" size={24} color="black" /> */}
         <Text style={styles.rating}>Rating: {initialProd.rating}</Text>
       </View>
     </View>

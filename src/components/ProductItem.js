@@ -3,15 +3,13 @@ import React from 'react'
 import { colors } from '../theme/colors'
 import { products } from '../data/products'
 
-export default function ProductItem({ item }) {
+export default function ProductItem({ item , navigation}) {
 
     const {height, width} = useWindowDimensions();
 
-    console.log(height, width);
-
   return (
     <View style={styles.container}>
-        <Pressable style={styles.button} onPress={() => console.log("PRESIONADO")}> 
+        <Pressable style={styles.button} onPress={ () => navigation.navigate("Detalle", {item : item})}> 
                 <Text style={ width < 450 ? styles.textMin : styles.text}>{ item.title}</Text>
                 <Text style={styles.text}>{ item.price}</Text>
             <Image resizeMode='cover' style={styles.image} source={{uri: item.images[0]}} />
