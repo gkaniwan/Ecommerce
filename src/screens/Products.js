@@ -11,7 +11,8 @@ export default function Products({ route, navigation}) {
 
   const products = useSelector((state) => state.homeSlice.allProducts);
 
-  console.log("products:", products);
+  const productsFilterByCategories = useSelector((state) => state.homeSlice.productsFilterByCategories);
+
 
     const [categoryProduct, setCategoryProduct] = useState([]);
     const [text, setText] = useState(null);
@@ -19,8 +20,8 @@ export default function Products({ route, navigation}) {
     const { item } = route.params;
 
     useEffect(() => {
-        const filterByCategory = products.filter((el) => el.category === item);
-        setCategoryProduct(filterByCategory);
+
+        setCategoryProduct(productsFilterByCategories);
 
         if(text) {
             const prod = products.filter((el) => el.title.toLocaleLowerCase() === text.toLocaleLowerCase());

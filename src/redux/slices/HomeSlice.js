@@ -11,14 +11,16 @@ const homeSlice = createSlice({
         allCategories: categorias,
         allProducts: products, 
         categoryPressed: "",
+        productsFilterByCategories: []
     },
 
     reducers: {
         setCategoryPressed: (state, action) => {
             state.categoryPressed = action.payload;
+            state.productsFilterByCategories = state.allProducts.filter((el) => el.category === state.categoryPressed);
         }
-    },
 
+    },
 })
 
 export const { setCategoryPressed } = homeSlice.actions;
