@@ -10,10 +10,17 @@ const homeSlice = createSlice({
     initialState: {
         allCategories: categorias,
         allProducts: products, 
+        categoryPressed: "",
     },
 
-    reducers: {},
+    reducers: {
+        setCategoryPressed: (state, action) => {
+            state.categoryPressed = action.payload;
+        }
+    },
 
 })
+
+export const { setCategoryPressed } = homeSlice.actions;
 
 export default homeSlice.reducer;
