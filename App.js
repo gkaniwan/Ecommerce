@@ -4,7 +4,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import RootNavegation from './src/navegation/RootNavegation';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import TabNav from './src/navegation/TabNav';
-
+import { Provider } from 'react-redux';
+import { store } from './src/redux/store';
 
 export default function App() {
 
@@ -20,9 +21,11 @@ export default function App() {
 
 
   return (
-    <NavigationContainer>
-      <TabNav/>
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <TabNav/>
+      </NavigationContainer>
+    </Provider>
   );
 }
 

@@ -2,11 +2,16 @@ import { FlatList, StyleSheet, Text, View, Pressable } from 'react-native'
 import React, {useEffect, useState} from 'react'
 import Search from '../components/Search'
 import Header from '../components/Header'
-import { products } from '../data/products'
+// import { products } from '../data/products'
 import ProductItem from '../components/ProductItem'
+import { useSelector } from 'react-redux'
 
 
 export default function Products({ route, navigation}) {
+
+  const products = useSelector((state) => state.homeSlice.allProducts);
+
+  console.log("products:", products);
 
     const [categoryProduct, setCategoryProduct] = useState([]);
     const [text, setText] = useState(null);

@@ -1838,5 +1838,5 @@ export const products =[
       "https://i.dummyjson.com/data/products/100/thumbnail.jpg"
     ]
   }
-]
+];
 
